@@ -1,0 +1,98 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Facture
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      .logo {
+        width: 150px;
+        height: auto;
+      }
+      .invoice-info {
+        text-align: right;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #f8f9fa;
+      }
+      .totals {
+        width: 300px;
+        margin-left: auto;
+      }
+      .totals table {
+        margin-bottom: 0;
+      }
+      .footer {
+        margin-top: 50px;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+      }
+  body
+    .header
+      img.logo(src=logo, alt='Logo' style='transform: scale(1.5);')
+      .invoice-info
+        h2 Facture ##{invoice.number}/#{invoice.year}
+        p Date: #{dayjs(invoice.date).format('DD/MM/YYYY')}
+        p Date d'échéance: #{dayjs(invoice.expiredDate).format('DD/MM/YYYY')}
+
+    .client-info
+      h3 Client
+      p #{invoice.client.name}
+      p #{invoice.client.address}
+      p Email: #{invoice.client.email}
+      p Téléphone: #{invoice.client.phone}
+
+    table
+      thead
+        tr
+          th(style='text-align: left;') Service
+          th(style='text-align: right;') Tarif Journalier
+          th(style='text-align: right;') Nombre d'agents
+          th(style='text-align: right;') Durée
+          th(style='text-align: right;') Total
+      tbody
+        each service in invoice.services
+          tr
+            td(style='text-align: left;')
+              | #{service.siteTariffId.site.name}
+              br
+              | #{service.siteTariffId.prestation.name}
+            td(style='text-align: right;') #{moneyFormatter({ amount: service.dailyRate, currency_code: invoice.currency })}
+            td(style='text-align: right;') #{service.numberOfAgents}
+            td(style='text-align: right;') #{dayjs(service.endDate).diff(dayjs(service.startDate), 'day')} jours
+            td(style='text-align: right;') #{moneyFormatter({ amount: service.total, currency_code: invoice.currency })}
+
+    .totals
+      table
+        tr
+          td Sous-total:
+          td(style='text-align: right;') #{moneyFormatter({ amount: invoice.subTotal, currency_code: invoice.currency })}
+        tr
+          td Taxe (#{invoice.taxRate}%):
+          td(style='text-align: right;') #{moneyFormatter({ amount: invoice.taxTotal, currency_code: invoice.currency })}
+        tr
+          td(style='font-weight: bold;') Total:
+          td(style='text-align: right; font-weight: bold;') #{moneyFormatter({ amount: invoice.total, currency_code: invoice.currency })}
+
+    .footer
+      p Merci de votre confiance
+      p Pour toute question, n'hésitez pas à nous contacter 

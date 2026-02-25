@@ -1,0 +1,302 @@
+doctype html
+html
+  head
+    link(rel="shortcut icon" type="image/png" href="/images/icons/favicon.png")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href="https://fonts.googleapis.com/css2?family=Prodin:wght@400;700&display=swap" rel="stylesheet")
+    style.
+      @font-face {
+        font-family: 'Prodin';
+        src: url('/fonts/Prodin-Regular.woff2') format('woff2'),
+             url('/fonts/Prodin-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Prodin';
+        src: url('/fonts/Prodin-Bold.woff2') format('woff2'),
+             url('/fonts/Prodin-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+      }
+      body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        font-family: 'Prodin', sans-serif;
+        font-size: 8px;
+        color: #222;
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .clearfix { display: block; }
+      .left { float: left; }
+      .right { float: right; }
+      .logo {
+        width: 180px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+      .company-info {
+        text-align: right;
+        font-size: 8px;
+        color: #1a365d;
+      }
+      h1.invoice {
+        font-size: 16px;
+        color: #1a365d;
+        text-align: center;
+        font-weight: bold;
+        line-height: 1.2;
+        margin: 30px 0 20px 0;
+        word-break: break-word;
+        width: 100%;
+        display: block;
+      }
+      h2.invoice {
+        font-size: 14px;
+        color: #1a365d;
+        margin-top: 0;
+        font-family: 'Prodin', sans-serif;
+      }
+      .table-invoice {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin-bottom: 20px;
+      }
+      .table-invoice th {
+        padding: 8px 10px;
+        border-bottom: 1px solid #c2e0f2;
+        color: #1a365d;
+        white-space: nowrap;
+        font-weight: 700;
+        font-size: 8px;
+        text-align: center;
+      }
+      .table-invoice td {
+        padding: 8px 10px;
+        font-size: 8px;
+        text-align: center;
+      }
+      .footer-invoice {
+        color: #1a365d;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: auto;
+        width: 100%;
+        background: #fff;
+        border-top: 2px solid #e2e8f0;
+        font-size: 6px;
+        line-height: 1.2;
+        page-break-inside: avoid;
+        z-index: 1000;
+      }
+      .footer-line {
+        font-weight: bold;
+        color: #1a365d;
+        font-size: 6px;
+        margin-bottom: 4px;
+        text-align: center;
+        line-height: 1.2;
+      }
+      .main-content {
+        flex: 1;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .signatures-container {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 60px;
+      }
+      .signatures-header {
+        color: #1a365d;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .signatures-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        gap: 20px;
+      }
+      .signature-block {
+        page-break-inside: avoid;
+        min-height: 120px;
+        border: 1px solid #1a365d;
+        border-radius: 4px;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+      .signature-title {
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .signature-content {
+        font-size: 8px;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      .signature-box {
+        border: 1px solid #1a365d;
+        height: 40px;
+        width: 100%;
+        margin: 10px 0;
+      }
+      .signature-note, .signature-date-block {
+        font-size: 8px;
+        text-align: center;
+        margin-top: 5px;
+      }
+      h3 {
+        color: #2c3e50;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 5px;
+        font-size: 12px;
+      }
+      ul li {
+        background: #f8f9fa;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #3498db;
+        page-break-inside: avoid;
+        font-size: 8px;
+      }
+      ul li div {
+        font-size: 8px;
+      }
+      p {
+        font-size: 8px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        text-align: justify;
+        padding: 0;
+        margin-top: 10px;
+      }
+      strong {
+        font-weight: bold;
+        color: #1a365d;
+      }
+  body
+    .main-content
+      header.clearfix
+        .top-area
+          img.logo.left(src=settings.public_server_file + settings.company_logo alt="Logo")
+          //- Suppression des informations de l'entreprise en haut
+      .clearfix
+      h1.invoice
+        | Contrat de Prestation de Services de Sécurité
+      br
+    h2.invoice Préambule
+    p(style="line-height: 1.6; margin-bottom: 20px; text-align: justify; padding: 0; margin-top: 10px;") Le présent contrat a pour objet de définir les termes et conditions dans lesquelles la société #{settings.company_name} s'engage à fournir des services de sécurité, incluant la mise à disposition d'agents de sécurité confirmés, pour le client, dans le cadre de la protection de ses biens, de ses installations et de ses employés.
+    h2.invoice 1. Description des Services Fournis
+    p Les services suivants seront fournis :
+    if model.services && model.services.length
+      //- Grouper les services par site en utilisant l'ID du site pour éviter les doublons
+      - var servicesBySite = {}
+      each service in model.services
+        - var siteId = service.siteTariffId && service.siteTariffId.site && service.siteTariffId.site._id || 'unknown'
+        - var siteName = service.siteTariffId && service.siteTariffId.site && service.siteTariffId.site.name || 'Site non défini'
+        - if (!servicesBySite[siteId]) servicesBySite[siteId] = { name: siteName, services: [] }
+        - servicesBySite[siteId].services.push(service)
+      
+      //- Afficher chaque site avec ses prestations
+      each siteData in Object.values(servicesBySite)
+        h3(style="color: #2c3e50; margin-top: 20px; margin-bottom: 10px; border-bottom: 2px solid #3498db; padding-bottom: 5px;") 🏢 Site : #{siteData.name}
+        ul(style="list-style: none; padding-left: 0;")
+          each service in siteData.services
+            li(style="background: #f8f9fa; margin: 10px 0; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db; page-break-inside: avoid;")
+              div(style="font-weight: bold; color: #2c3e50; margin-bottom: 8px;") 🔒 #{service.siteTariffId && service.siteTariffId.prestation && service.siteTariffId.prestation.name || 'Prestation non définie'}
+              div(style="color: #7f8c8d; font-size: 14px; margin-bottom: 8px;") #{service.siteTariffId && service.siteTariffId.prestation && service.siteTariffId.prestation.description || 'Aucune description disponible'}
+        br
+    else
+      p Aucun service renseigné
+    h2.invoice 2. Conditions financières
+    p La présente prestation fait l'objet d'une facturation basée sur les tarifs suivants :
+    if model.services && model.services.length
+      //- Grouper les services par site pour les conditions financières (même logique)
+      - var servicesBySite = {}
+      each service in model.services
+        - var siteId = service.siteTariffId && service.siteTariffId.site && service.siteTariffId.site._id || 'unknown'
+        - var siteName = service.siteTariffId && service.siteTariffId.site && service.siteTariffId.site.name || 'Site non défini'
+        - if (!servicesBySite[siteId]) servicesBySite[siteId] = { name: siteName, services: [] }
+        - servicesBySite[siteId].services.push(service)
+      
+      //- Afficher chaque site avec ses prestations
+      each siteData in Object.values(servicesBySite)
+        h3(style="color: #2c3e50; margin-top: 20px; margin-bottom: 10px; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;") 💰 Site : #{siteData.name}
+        ul(style="list-style: none; padding-left: 0;")
+          each service in siteData.services
+            li(style="background: #fff5f5; margin: 10px 0; padding: 15px; border-radius: 8px; border-left: 4px solid #e74c3c; page-break-inside: avoid;")
+              div(style="font-weight: bold; color: #2c3e50; margin-bottom: 8px;") 🔒 #{service.siteTariffId && service.siteTariffId.prestation && service.siteTariffId.prestation.name || 'Prestation non définie'}
+              div(style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;")
+                div(style="background: #fdf2f2; padding: 8px; border-radius: 5px;")
+                  strong 💵 Tarif journalier unitaire : #{service.dailyRate} XAF
+                div(style="background: #fdf2f2; padding: 8px; border-radius: 5px;")
+                  strong 👥 Nombre d'agents : #{service.numberOfAgents}
+                div(style="background: #fdf2f2; padding: 8px; border-radius: 5px;")
+                  strong 🎯 Total journalier : #{service.dailyRate * service.numberOfAgents} XAF
+        br
+    else
+      p Aucun service renseigné
+    p La facturation interviendra mensuellement, sur la base du nombre de jours effectivement prestés au cours de la période contractuelle définie, conformément aux termes du présent contrat.
+    h2.invoice 3. Durée du contrat
+    p Le présent contrat est établi pour une durée allant du 
+      strong #{moment(model.startDate).add(2, 'hours').format('DD/MM/YYYY')}
+      |  au 
+      strong #{moment(model.endDate).add(2, 'hours').format('DD/MM/YYYY')}
+      | , à compter de la date de signature des deux parties. Il sera reconduit tacitement sauf dénonciation par l'une des parties au moins 30 jours avant son terme.
+    h2.invoice 4. Obligations du Prestataire
+    p  <strong>#{settings.company_name}</strong> s'engage à fournir des agents de sécurité qualifiés, certifiés, et dotés de l'équipement nécessaire à la bonne exécution des prestations. Les agents assureront leur présence sur le site selon les horaires convenus, et veilleront activement à la sécurité des biens et des personnes. Le Prestataire s'engage à remettre un rapport mensuel détaillant les interventions, actions et incidents éventuels survenus durant la période de service. En cas de manquement à ses obligations (telle que l'absence d'un agent ou la défaillance d'un équipement), <strong>#{settings.company_name}</strong> prendra les mesures correctives nécessaires.
+    h2.invoice 5. Obligations du client
+    p Le Client fournira à <strong>#{settings.company_name}</strong> l'accès complet et sécurisé à toutes les zones devant être surveillées. Le Client mettra en place les infrastructures nécessaires à la sécurité des agents (sanitaires, points d'eau, etc.). Le Client s'engage à effectuer les paiements dans les délais impartis.
+    h2.invoice 6. Résiliation du contrat
+    p Le Client peut résilier le contrat à tout moment avec un préavis de x jours par écrit, sans pénalité, sauf en cas de violation des termes du contrat.
+    p <strong>#{settings.company_name}</strong> peut résilier ce contrat en cas de non-paiement par le Client ou en cas de comportement non professionnel du Client, après une mise en demeure de x jours.
+    h2.invoice 7. Confidentialité
+    p <strong>#{settings.company_name}</strong> et <strong>#{model.client ? model.client.name : 'Le Client'}</strong> s'engagent à maintenir la confidentialité de toutes les informations sensibles échangées durant la durée du contrat, notamment les informations relatives à la sécurité, aux employés et à l'activité de l'entreprise.
+    .signatures-container
+      h2.invoice Signature des parties
+      p Fait à Libreville, le #{moment().add(2, 'hours').format('DD/MM/YYYY')}.
+      table(style="width:100%;margin-top:20px;")
+        tr
+          td(style="width:48%;vertical-align:top;")
+            div.signature-block
+              div.signature-title POUR LE CLIENT
+              div.signature-content
+                | #{model.client ? model.client.name : 'Le Client'}
+                br
+                | Représenté par : #{model.representativeName || 'Le Représentant'}
+              div.signature-box
+              div.signature-note
+                | (Signature précédée de la mention "Lu et approuvé")
+                br
+                | Le : #{moment().add(2, 'hours').format('DD/MM/YYYY')}
+          td(style="width:4%")
+          td(style="width:48%;vertical-align:top;")
+            div.signature-block
+              div.signature-title POUR #{settings.company_name}
+              div.signature-content
+                | Direction Générale de la Sécurité
+                br
+                | Représenté par : Le Directeur Général
+              div.signature-box
+              div.signature-note
+                | (Signature et cachet)
+                br
+                | Le : #{moment().add(2, 'hours').format('DD/MM/YYYY')}
+    //- Fermeture du conteneur principal
+    .footer-invoice
+      div.footer-line DACLIN GUARDIAN SECURITY. SARL AU CAPITAL DE 2 000 000 FCFA. SIEGE SOCIAL CENTRE-VILLE (FEU ROUGE CENTRE MEDICO) 2641 LIBREVILLE
+      div.footer-line NUMERO RCCM : GA-LBV 01 2021 B1 00297 – NIF XXXXXXXXX
+      div.footer-line CONTACTS : 077131056 / 011760203 / 074808781 – DIRECTION@DGS-GABON.COM – WWW.DGS-GABON.COM

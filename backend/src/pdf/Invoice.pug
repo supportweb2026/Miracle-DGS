@@ -1,0 +1,440 @@
+doctype html
+html
+  head
+    link(rel="shortcut icon" type="image/png" href="/images/icons/favicon.png")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(href="https://fonts.googleapis.com/css2?family=Prodin:wght@400;500;600;700&display=swap" rel="stylesheet")
+    style.
+      .sheet {
+        margin: 0;
+        width: 100%; 
+        height: 297mm;
+      }
+
+      body{
+        width: 100%; 
+        margin: 0;
+        padding: 0px ;
+        background:rgb(255, 255, 255);
+        font-family: 'Prodin', sans-serif;
+        font-size:11px;
+        color:#222
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+        color:#222
+      }
+
+      .clearfix {
+        display: block; }
+      .left{
+        float:left;
+      }
+      .right{
+        float:right;
+      }
+      .top-area {    
+        display: block;
+        width:100%;
+        
+      }
+      alignRight :{
+        text-align: right !important;
+      }
+      alignLeft :{
+        text-align: left;
+      }
+      .logo {
+        width: 300px;
+        transform: scale(1.5);
+      }
+      .company-info{
+        text-align: right;
+        font-size:12px;
+      }
+      h1.invoice{
+        font-size:20px;
+        color:#1a365d;
+        margin-top:0;
+        font-family: 'Prodin', sans-serif;
+        font-weight: 700;
+      }
+      p.strong{
+        font-weight:700;
+      }
+      .billTo p {
+        text-align: right !important;
+        float:right;
+        display:block;
+        font-size:12px;
+        width:100%;
+        margin-top:0;
+        margin-bottom:10px;
+        
+      }
+
+      .tableHeader{
+        color:#1a365d;
+        font-family: 'Prodin', sans-serif;
+        font-weight: 600;
+      }
+      .clearfix {
+        display: block; }
+      .col {
+        float:left;
+      }
+      .col-1 {
+        width: 4.16667%; }
+
+      .col-2 {
+        width: 8.33333%; }
+
+      .col-3 {
+        width: 12.5%; }
+
+      .col-4 {
+        width: 16.66667%; }
+
+      .col-5 {
+        width: 20.83333%; }
+
+      .col-6 {
+        width: 25%; }
+
+      .col-7 {
+        width: 29.16667%; }
+
+      .col-8 {
+        width: 33.33333%; }
+
+      .col-9 {
+        width: 37.5%; }
+
+      .col-10 {
+        width: 41.66667%; }
+
+      .col-11 {
+        width: 45.83333%; }
+
+      .col-12 {
+        width: 50%; }
+
+      .col-13 {
+        width: 54.16667%; }
+
+      .col-14 {
+        width: 58.33333%; }
+
+      .col-15 {
+        width: 62.5%; }
+
+      .col-16 {
+        width: 66.66667%; }
+
+      .col-17 {
+        width: 70.83333%; }
+
+      .col-18 {
+        width: 75%; }
+
+      .col-19 {
+        width: 79.16667%; }
+
+      .col-20 {
+        width: 83.33333%; }
+
+      .col-21 {
+        width: 87.5%; }
+
+      .col-22 {
+        width: 91.66667%; }
+
+      .col-23 {
+        width: 95.83333%; }
+
+      .col-24 {
+        width: 100%; }
+      .space {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width:100%;
+      }
+      .top-area .number-invoice > h1 {
+        font-weight: 500;
+      }
+      .about-invoice {
+        padding: 0px 15px;
+        margin-top: 10px;
+        font-size: 13px;
+      }
+      .project-invoice {
+        float: left;
+        margin-bottom: 10px;
+      }
+      .project-invoice span {
+        color: #5d6975;
+        text-align: right;
+        width: 52px;
+        margin-right: 10px;
+        display: inline-block;
+        font-size: 0.8em;
+      }
+      .company-invoice {
+        float: right;
+        text-align: right;
+        margin-bottom: 40px;
+      }
+      .project-invoice div, .company-invoice div {
+        white-space: nowrap;
+        margin: 5px auto;
+      }
+      .table-invoice {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin-bottom: 20px;
+      }
+      .table-invoice tr:nth-child(2n-1) td {
+        background: #fcfeff;
+      }
+      .table-invoice th, .table-invoice td {
+        text-align: center;
+        font-family: 'Prodin', sans-serif;
+      }
+      .table-invoice th {
+        padding: 8px 10px;
+        border-bottom: 1px solid #c2e0f2;
+        color:#1a365d;
+        white-space: nowrap;
+        font-weight: 700;
+        font-size: 12px;
+        text-align: right;
+      }
+      tbody{
+        border-bottom: 1px solid #c2e0f2;
+      }
+      .table-invoice .service, .table-invoice .desc {
+        text-align: left;
+      }
+      .table-invoice td {
+        padding: 10px ;
+        text-align: right;
+        font-size: 11px;
+      }
+      .table-invoice td.service, .table-invoice td.desc {
+        vertical-align: top;
+      }
+      .table-invoice td.unit, .table-invoice td.qty, .table-invoice td.total {
+        
+      }
+      .table-invoice td.grand {
+        border-top: 1px solid #5d6975;
+      }
+      .service span{
+        display:block;
+        clear:both;
+        width : 100%;
+        color:#666;
+        margin-top:5px;
+        font-size:10px;
+      }
+      .notice-invoice {
+        padding: 15px;
+      }
+      .notice-invoice .notice {
+        color: #5d6975;
+        
+      }
+      .footer-invoice {
+        color: #1a365d;
+        text-align: center;
+        padding: 15px 0;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        border-top: 2px solid #e2e8f0;
+        font-size: 6px;
+        line-height: 1.2;
+        page-break-inside: avoid;
+        z-index: 1000;
+      }
+      .footer-invoice .company-header {
+        font-weight: bold;
+        color: #1e40af;
+        font-size: 12px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .footer-invoice .company-details {
+        font-size: 10px;
+        color: #374151;
+        line-height: 1.6;
+        margin-bottom: 2px;
+      }
+      .footer-invoice .company-contact {
+        font-size: 10px;
+        color: #1e40af;
+        font-weight: 500;
+        margin-top: 8px;
+      }
+      .footer-line {
+        font-weight: bold;
+        color: #1a365d;
+        font-size: 6px;
+        margin-bottom: 4px;
+        text-align: center;
+        line-height: 1.2;
+      }
+      .table-invoice td.qty, .table-invoice td[colspan] {
+        white-space: nowrap;
+      }
+      .table-invoice td.total {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 11px;
+        font-weight: normal;
+        max-width: 150px;
+      }
+      .table-invoice td.grand.total {
+        font-weight: bold;
+        font-size: 11px;
+        max-width: 150px;
+      }
+      .table-invoice td.service strong {
+        font-weight: bold;
+      }
+ 
+  body
+    
+      header.clearfix
+        .top-area
+          img.logo.left(src=settings.public_server_file+settings.company_logo)
+        .col.col-24
+          .space  
+        .left.col-14
+            h1.invoice
+              | #{translate('Facture')}
+            div 
+              .col.col-6
+                p.strong #{translate('Date')} :
+                p #{dateFormat(model.date)}
+              .col.col-12
+                p.strong #{'Nombre de jours'} :
+                p #{model.services && model.services.length > 0 ? model.services.reduce((total, service) => total + (service.numberOfDays || 0), 0) : 0} jours
+              .col.col-6
+                p.strong #{'Numéro'} :
+                p # #{model.number}/#{model.year || ""} 
+              
+        .right.col-10
+            .billTo
+                p.strong #{translate('Client')} :
+                p #{model.client.name}
+                p #{model.client.address}
+                p #{model.client.phone}
+                p #{model.client.email}
+        .col.col-24
+          .space  
+      main
+        table.table-invoice
+          thead
+            tr.tableHeader
+              th.service #{'Prestations'}
+              th #{'Tarif Journalier'}
+              th #{translate('Total')}
+          tbody
+            each service in model.services
+              tr
+                td.service
+                  strong #{service.siteTariffId && service.siteTariffId.site ? service.siteTariffId.site.name : (service.service ? service.service.name : 'Service')}
+                  br
+                  span #{service.siteTariffId && service.siteTariffId.prestation ? service.siteTariffId.prestation.name : ''}
+                  span Nombre d'agents: #{service.numberOfAgents}
+                  if service.description
+                    br
+                    span #{service.description}
+                td.total #{moneyFormatter({amount:service.dailyRate})}
+                td.total #{moneyFormatter({amount:service.total})}
+            tr
+              td(colspan='2') #{translate('TOTAL Hors Taxe')}
+              td.total #{moneyFormatter({amount:model.subTotal})}
+            if model.taxDetails
+              if model.taxDetails.tva
+                tr
+                  td(colspan='2') TVA 18%
+                  td.total #{moneyFormatter({amount:model.taxDetails.tva})}
+              if model.taxDetails.css
+                tr
+                  td(colspan='2') CSS 1%
+                  td.total #{moneyFormatter({amount:model.taxDetails.css})}
+              if model.taxDetails.tps
+                tr
+                  td(colspan='2') TPS #{model.taxRate}%
+                  td.total #{moneyFormatter({amount:model.taxDetails.tps})}
+              if model.taxDetails.tax
+                tr
+                  td(colspan='2') #{model.taxName || translate('TAXE')} (#{model.taxRate}%)
+                  td.total #{moneyFormatter({amount:model.taxDetails.tax})}
+            else if model.taxRate > 0
+              if model.taxName === 'TVA et CSS' || Number(model.taxRate) === 19
+                tr
+                  td(colspan='2') TVA 18%
+                  td.total #{moneyFormatter({amount:model.subTotal * 0.18})}
+                tr
+                  td(colspan='2') CSS 1%
+                  td.total #{moneyFormatter({amount:model.subTotal * 0.01})}
+              else if model.taxName === 'TPS' || Number(model.taxRate) === 9.5
+                tr
+                  td(colspan='2') TPS -9.5%
+                  td.total -#{moneyFormatter({amount:model.taxTotal})}
+              else if model.taxName === 'TPS et CSS' || Number(model.taxRate) === 10.5
+                tr
+                  td(colspan='2') TPS -9.5%
+                  td.total -#{moneyFormatter({amount:model.subTotal * 0.095})}
+                tr
+                  td(colspan='2') CSS 1%
+                  td.total #{moneyFormatter({amount:model.subTotal * 0.01})}
+              else if model.taxName === 'TPS CSS' || Number(model.taxRate) === 19.5
+                tr
+                  td(colspan='2') TPS -18.5%
+                  td.total -#{moneyFormatter({amount:model.subTotal * 0.185})}
+                tr
+                  td(colspan='2') CSS 1%
+                  td.total #{moneyFormatter({amount:model.subTotal * 0.01})}
+              else
+                tr
+                  td(colspan='2') #{model.taxName || translate('TAXE')} (#{model.taxRate}%)
+                  td.total #{moneyFormatter({amount:model.subTotal * 0.01})}
+            tr
+              td.grand.total(colspan='2')  #{translate('TOTAL')} 
+              td.grand.total
+                - let finalTotal = model.subTotal
+                - if (model.taxName === 'TPS et CSS' || Number(model.taxRate) === 10.5)
+                  - finalTotal = model.subTotal - (model.subTotal * 0.095) + (model.subTotal * 0.01)
+                - else if (model.taxName === 'TPS' || Number(model.taxRate) === 9.5)
+                  - finalTotal = model.subTotal - (model.subTotal * 0.095)
+                - else if (model.taxName === 'TPS CSS' || Number(model.taxRate) === 19.5)
+                  - finalTotal = model.subTotal - (model.subTotal * 0.185) + (model.subTotal * 0.01)
+                - else if (model.taxName === 'TVA et CSS' || Number(model.taxRate) === 19)
+                  - finalTotal = model.subTotal + (model.subTotal * 0.18) + (model.subTotal * 0.01)
+                - else if (model.taxRate > 0)
+                  - finalTotal = model.subTotal + model.taxTotal
+                | #{moneyFormatter({amount: finalTotal})}
+        
+      .col.col-24
+          .space     
+      footer.footer-invoice
+        //- | Invoice was created on a computer and is valid without the signature and seal.
+        
+        //- Pied de page avec informations DACLIN GUARDIAN SECURITY
+        .footer-invoice
+          div.footer-line DACLIN GUARDIAN SECURITY. SARL AU CAPITAL DE 2 000 000 FCFA. SIEGE SOCIAL CENTRE-VILLE (FEU ROUGE CENTRE MEDICO) 2641 LIBREVILLE
+          div.footer-line NUMERO RCCM : GA-LBV 01 2021 B1 00297 – NIF XXXXXXXXX
+          div.footer-line CONTACTS : 077131056 / 011760203 / 074808781 – DIRECTION@DGS-GABON.COM – WWW.DGS-GABON.COM
+          
+
+   

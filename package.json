@@ -1,0 +1,23 @@
+{
+  "name": "miracle-crm-monorepo",
+  "version": "4.1.0",
+  "private": true,
+  "engines": {
+    "node": "20.9.0",
+    "npm": "10.2.4"
+  },
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "start": "cd backend && npm start"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "puppeteer": "^24.17.1"
+  }
+}
