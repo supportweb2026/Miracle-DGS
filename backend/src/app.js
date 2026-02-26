@@ -25,7 +25,6 @@ app.use((req, res, next) => {
 });
 
 // CORS configuration
-//'https://www.crmiracle.net', 'http://localhost:3000'
 const corsOptions = {
   origin: ['https://www.crmiracle.net', 'http://localhost:3000'],
   credentials: true,
