@@ -37,6 +37,7 @@ const corsOptions = {
 
 // Apply CORS middleware
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 // Security headers middleware
 app.use((req, res, next) => {
