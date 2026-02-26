@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 // CORS configuration
 const corsOptions = {
-  origin: ['https://www.crmiracle.net', 'http://localhost:3000'],
+  origin: ['https://www.crmiracle.net', 'http://localhost:3000','https://miracle-dgs.onrender.com'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
