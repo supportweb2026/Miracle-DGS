@@ -72,7 +72,7 @@ app.use(express.static(path.join(__dirname, '../../frontend/dist')));
 
 // API Routes
 app.use('/api', coreAuthRouter);
-app.use('/api', adminAuth.isValidAuthToken, coreApiRouter);
+app.use('/api',  coreApiRouter);
 app.use('/api', adminAuth.isValidAuthToken, erpApiRouter);
 app.use('/download', coreDownloadRouter);
 app.use('/public', corePublicRouter);
