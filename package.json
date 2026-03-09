@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "cd frontend && npm install && npm run build",
-    "start": "cd backend && npm start"
+    "start": "cd .. && cd backend && npm start"
   },
   "workspaces": [
     "frontend",
