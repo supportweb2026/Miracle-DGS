@@ -7,7 +7,7 @@
     "npm": "10.2.4"
   },
   "scripts": {
-    "build": "cd frontend && npm install && npm run build",
+    "build": "npm install && npm run build",
     "start": "npm start"
   },
   "workspaces": [
